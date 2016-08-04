@@ -3,9 +3,9 @@ sudo: required
 
 env:
   matrix:
-    - directory: flask
-      start_command: docker-compose up -d
-      stop_command: docker-compsose
+    - directory: "flask"
+      start_command: "docker-compose up -d"
+      stop_command: "docker-compose stop"
 
 services:
   - docker
