@@ -87,7 +87,14 @@ At this point, you should be somewhat familiar with the main Docker CLI. Some ot
 
 ## Diving Deeper
 
-TODO - Creating our first image, doing some fun and amazing things.
+Other examples warrant their own dedicated directories, with example code and individual detailed README's explaining how they work. Included examples:
+
+  - [`/flask`](/flask) - Python Flask / MySQL demonstration using `docker-compose` with simple container linking.
+  - TODO...
+
+## License
+
+This project is licensed under the MIT open source license.
 
 ## About the Author
 
