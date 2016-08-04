@@ -12,6 +12,9 @@ services:
   - docker
 
 before_install:
+  # List available docker-engine versions.
+  - apt-cache madison docker-engine
+
   # Upgrade docker and docker-compose.
   - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION}
   - sudo rm /usr/local/bin/docker-compose
