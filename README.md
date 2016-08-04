@@ -1,5 +1,7 @@
 # Docker Examples - by geerlingguy
 
+[![Build Status](https://travis-ci.org/geerlingguy/docker-examples.svg?branch=master)](https://travis-ci.org/geerlingguy/docker-examples)
+
 The web is full of Docker examples and tutorials and repos.
 
 There are many like it, but this one is mine.
