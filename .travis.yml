@@ -4,12 +4,14 @@ sudo: required
 env:
   matrix:
     - TEST_DIR: "flask"
-      START_COMMAND: "docker-compose up -d"
-      STOP_COMMAND: "docker-compose stop"
 
 services:
   - docker
 
+before_script:
+  - cd $TEST_DIR
+
 script:
-  - cd $TEST_DIR && $START_COMMAND
-  - cd $TEST_DIR && $STOP_COMMAND
+  - ls
+  - docker-compose up -d
+  - docker-compose stop
