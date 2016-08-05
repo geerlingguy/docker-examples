@@ -12,11 +12,7 @@ services:
 
   db:
     build: db/.
-    volumes_from:
-      - dbdata
+    volumes:
+      - /var/lib/mysql
     environment:
        MYSQL_ROOT_PASSWORD: supersecure
-
-  dbdata:
-    build: data/.
-    hostname: mysqldata
