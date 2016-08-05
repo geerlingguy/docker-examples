@@ -2,15 +2,32 @@
 sudo: required
 
 env:
+  global:
+    - DOCKER_VERSION: "1.12.0-0~trusty"
+    - DOCKER_COMPOSE_VERSION: "1.8.0"
   matrix:
-    - directory: "flask"
-      start_command: "docker-compose up -d"
-      stop_command: "docker-compose stop"
+    - TEST_DIR: "flask"
 
 services:
   - docker
 
+before_install:
+  # List available docker-engine versions.
+  - apt-cache madison docker-engine
+
+  # Upgrade docker and docker-compose.
+  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION}
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - docker -v
+  - docker-compose -v
+
+before_script:
+  - cd $TEST_DIR
+
 script:
-  - 'cd ${directory}'
-  - '${start_command}'
-  - '${stop_command}'
+  - ls
+  - docker-compose up -d
+  - docker-compose stop
