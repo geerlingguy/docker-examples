@@ -94,7 +94,6 @@ Other examples warrant their own dedicated directories, with example code and in
   - [`/flask`](/flask) - Python Flask and MySQL.
   - [`/php`](/php) - PHP-FPM and Nginx.
   - [`/symfony`](/symfony) - Symfony and SQLite.
-  - TODO...
 
 ## License
 

@@ -7,6 +7,8 @@ env:
     - DOCKER_COMPOSE_VERSION: "1.8.0"
   matrix:
     - TEST_DIR: "flask"
+    - TEST_DIR: "php"
+    # - TEST_DIR: "symfony"
 
 services:
   - docker
