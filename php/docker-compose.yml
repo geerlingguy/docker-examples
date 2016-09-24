@@ -1,7 +1,7 @@
 version: "2"
 services:
 
-  web:
+  nginx:
     build: nginx/.
     ports:
       - "80:80"
