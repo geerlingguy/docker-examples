@@ -1,6 +1,11 @@
-# Simple Flask App with MySQL Database
+# Flask App with MySQL Database
 
-> Quick Start: `docker-compose up`
+## Quick Start
+
+  1. Run `docker-compose up`
+  2. Visit `http://localhost/` in your browser.
+
+## Description
 
 [Flask](http://flask.pocoo.org/) is a web development microframework for Python. It's efficient, easy-to-use, and easy-to-deploy!
 

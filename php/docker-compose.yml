@@ -1,0 +1,21 @@
+version: "2"
+services:
+
+  web:
+    build: nginx/.
+    ports:
+      - "80:80"
+    links:
+      - php
+    volumes_from:
+      - data
+
+  php:
+    image: php:fpm
+    volumes_from:
+      - data
+
+  data:
+    image: busybox:latest
+    volumes:
+      - ./source:/var/www/html
