@@ -1,17 +1,17 @@
 version: "2"
 services:
 
+  php:
+    image: php:fpm
+    volumes_from:
+      - data
+
   nginx:
     build: nginx/.
     ports:
       - "80:80"
     links:
       - php
-    volumes_from:
-      - data
-
-  php:
-    image: php:fpm
     volumes_from:
       - data
 

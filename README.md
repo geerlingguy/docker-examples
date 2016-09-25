@@ -92,8 +92,12 @@ At this point, you should be somewhat familiar with the main Docker CLI. Some ot
 Other examples warrant their own dedicated directories, with example code and individual detailed README's explaining how they work. Included examples:
 
   - [`/flask`](/flask) - Python Flask and MySQL.
+    - Introduces `docker-compose`.
   - [`/php`](/php) - PHP-FPM and Nginx.
+    - Introduces extra package installation.
+    - Introduces `HEALTHCHECK`.
   - [`/symfony`](/symfony) - Symfony and SQLite.
+    - TODO.
 
 ## License
 
