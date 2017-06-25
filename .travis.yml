@@ -3,8 +3,7 @@ sudo: required
 
 env:
   global:
-    - DOCKER_VERSION: "1.12.1-0~trusty"
-    - DOCKER_COMPOSE_VERSION: "1.8.1"
+    - DOCKER_COMPOSE_VERSION: 1.14.0
   matrix:
     - TEST_DIR: "flask"
     - TEST_DIR: "php"
@@ -14,17 +13,14 @@ services:
   - docker
 
 before_install:
-  # List available docker-engine versions.
-  - apt-cache madison docker-engine
-
-  # Upgrade docker and docker-compose.
-  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION}
+  # Upgrade Docker Compose.
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-  - docker -v
-  - docker-compose -v
+  # Upgrade Docker.
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
 
 before_script:
   - cd $TEST_DIR
