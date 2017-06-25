@@ -1,6 +1,6 @@
 # A simple Flask app container.
 FROM python:2.7
-MAINTAINER Jeff Geerling <geerlingguy@mac.com>
+LABEL maintainer="Jeff Geerling"
 
 # Place app in container.
 COPY . /opt/www

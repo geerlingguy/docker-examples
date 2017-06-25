@@ -1,6 +1,6 @@
 # A MySQL container.
 FROM mysql:5.7
-MAINTAINER Jeff Geerling <geerlingguy@mac.com>
+LABEL maintainer="Jeff Geerling"
 
 EXPOSE 3306
 CMD ["mysqld"]
