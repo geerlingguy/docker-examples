@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  whoami:
+    image: emilevauge/whoami
+    networks:
+      - traefik_traefik-proxy
+      - internal
+    labels:
+      - "traefik.backend=whoami"
+      - "traefik.frontend.rule=Host:whoami.local.test"
+      - "traefik.docker.network=traefik_traefik-proxy"
+      - "traefik.port=80"
+    restart: always
+
+networks:
+  traefik_traefik-proxy:
+    external: true
+  internal:
+    external: false

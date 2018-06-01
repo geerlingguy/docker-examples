@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  proxy:
+    image: traefik:1.6
+    command: --web --docker --docker.domain=local.test --logLevel=INFO
+    networks:
+      - traefik-proxy
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /dev/null:/traefik.toml
+    restart:
+      always
+
+networks:
+  traefik-proxy:
+    driver: bridge

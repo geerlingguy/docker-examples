@@ -8,6 +8,7 @@ env:
     - TEST_DIR: "flask"
     - TEST_DIR: "php"
     # - TEST_DIR: "symfony"
+    - TEST_DIR: "traefik"
 
 services:
   - docker
@@ -27,5 +28,12 @@ before_script:
 
 script:
   - ls
+
+  # Extra Docker Compose file for Traefik.
+  - |
+    if [ "${TEST_DIR}" == "traefik" ]; then
+      docker-compose -f traefik.yml up -d
+    fi
+
   - docker-compose up -d
   - docker-compose stop

@@ -98,6 +98,9 @@ Other examples warrant their own dedicated directories, with example code and in
     - Introduces `HEALTHCHECK`.
   - [`/symfony`](/symfony) - Symfony and SQLite.
     - TODO.
+  - [`/traefik`](/traefik) - Traefik proxy.
+    - Introduces proxying of traffic for multiple hostnames on one port.
+    - Introduces the `.env` file.
 
 ## License
 
@@ -105,4 +108,4 @@ This project is licensed under the MIT open source license.
 
 ## About the Author
 
-[Jeff Geerling](http://www.jeffgeerling.com/) is the author of [Ansible for DevOps](https://www.ansiblefordevops.com/) and manages tons of infrastructure, as well as open source projects like [Drupal VM](https://www.drupalvm.com/).
+[Jeff Geerling](https://www.jeffgeerling.com/) is the author of [Ansible for DevOps](https://www.ansiblefordevops.com/) and manages tons of infrastructure, as well as open source projects like [Drupal VM](https://www.drupalvm.com/).
