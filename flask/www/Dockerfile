@@ -1,5 +1,5 @@
 # A simple Flask app container.
-FROM python:2.7
+FROM python:3-buster
 LABEL maintainer="Jeff Geerling"
 
 # Place app in container.

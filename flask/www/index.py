@@ -4,6 +4,7 @@ from flask import Flask
 from flask import Markup
 from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import text
 
 app = Flask(__name__)
 
@@ -17,10 +18,11 @@ db.init_app(app)
 @app.route("/")
 def test():
     mysql_result = False
+    query_string = text("SELECT 1")
     # TODO REMOVE FOLLOWING LINE AFTER TESTING COMPLETE.
-    db.session.query("1").from_statement("SELECT 1").all()
+    db.session.query("1").from_statement(query_string).all()
     try:
-        if db.session.query("1").from_statement("SELECT 1").all():
+        if db.session.query("1").from_statement(query_string).all():
             mysql_result = True
     except:
         pass
